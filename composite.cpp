@@ -6,9 +6,7 @@
 class Unit
 {
   public:
- virtual CompositeUnit* getComposite() {
-      return 0;
-    }   virtual int getStrength() = 0;
+ virtual int getStrength() = 0;
     virtual void addUnit(Unit* p) {
       assert( false);
     }
@@ -45,9 +43,6 @@ class Horseman: public Unit
 class CompositeUnit: public Unit
 {
   public:
-  CompositeUnit* getComposite() {
-      return this;
-    }
     int getStrength() {
       int total = 0;
       for(int i=0; i<c.size(); ++i)
